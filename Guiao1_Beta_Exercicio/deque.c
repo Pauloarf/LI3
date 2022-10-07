@@ -1,20 +1,11 @@
+#include "deque.h"
+#include "node.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 
-typedef struct node{
-    void* data;
-    Node* next;
-    Node* prev;
-} Node;
-
-typedef struct deque{
-    int size;
-    Node* first;
-    Node* last;
-    bool reversed;
-} Deque;
-
+//funcao a ser implementada no ficheiro node.c
+/*
 Node* nodeCreate(void *data){
     Node* new = malloc(sizeof(Node));
     new->data = data;
@@ -22,6 +13,7 @@ Node* nodeCreate(void *data){
     new->prev = NULL;
     return new;
 }
+*/
 
 Deque* createDeque(){
     Deque* deque = malloc(sizeof(Deque));
@@ -31,20 +23,20 @@ Deque* createDeque(){
     return deque;
 }
 
-
-// Needs review
-/*
+// no caso de size = 0; deque->front e deque->last apontam para o mesmo,
+// (adicionar if para deque->size = 0)
 void push(Deque* deque, void* data){
     Node* node = nodeCreate(data);
-    node->prev = deque->last;
+    node->next = deque->last;
+    (deque->last)->prev = node;
     deque->last = node;
     deque->size++;
 }
 
 void pushFront(Deque* deque, void* data){
     Node* node = nodeCreate(data);
-    node->next = deque->first;
+    node->prev = deque->first;
+    deque->first->next = node;
     deque->first = node;
     deque->size++;
 }
-*/

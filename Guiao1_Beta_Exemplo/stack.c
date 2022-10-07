@@ -28,3 +28,13 @@ void* stackPop(Stack* stack){
     stack->size--;
     return data;
 }
+
+void stackPrint(Stack* stack){
+    Node* top = stack->top;
+    while(top){
+        stack->elemPrint(top->data);
+        printf(" -> ");
+        top = top->next;
+    }
+    printf("x\n");
+}
