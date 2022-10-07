@@ -31,6 +31,9 @@ Deque* createDeque(){
     return deque;
 }
 
+
+// Needs review
+/*
 void push(Deque* deque, void* data){
     Node* node = nodeCreate(data);
     node->prev = deque->last;
@@ -44,3 +47,4 @@ void pushFront(Deque* deque, void* data){
     deque->first = node;
     deque->size++;
 }
+*/
