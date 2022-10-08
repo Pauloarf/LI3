@@ -4,17 +4,6 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-//funcao a ser implementada no ficheiro node.c
-/*
-Node* nodeCreate(void *data){
-    Node* new = malloc(sizeof(Node));
-    new->data = data;
-    new->next = NULL;
-    new->prev = NULL;
-    return new;
-}
-*/
-
 Deque* createDeque(){
     Deque* deque = malloc(sizeof(Deque));
     deque->size = 0;
